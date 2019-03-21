@@ -1,0 +1,7 @@
+# Editor directories and files
+.idea
+.settings
+
+target
+*.classpath
+*.iml
