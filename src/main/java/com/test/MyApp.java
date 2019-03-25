@@ -12,10 +12,10 @@ import java.util.Map;
 public class MyApp {
     public static void main(String[] args) throws Exception{
         MyRpcClientFacade client = new MyRpcClientFacade();
-        client.init("192.168.21.83", 6666);
+        client.init("master", 1111);
 
         String sampleData = "Hello Flume!";
-        for (int i = 0; i<10; i++) {
+        for (int i = 0; i<5; i++) {
             Thread.sleep(1000);
             client.sendDataToFlume(sampleData+System.currentTimeMillis());
         }

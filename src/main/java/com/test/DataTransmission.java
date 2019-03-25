@@ -12,19 +12,13 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 public class DataTransmission {
     public static void main(String[] args) throws Exception{
-        Map<String, String> headers = new HashMap<String, String>();
+        Map<String, String> headers = new HashMap<String, String>(1);
         headers.put("topic","test");
-        Properties properties = new Properties();
 
-        properties.put("host", "192.168.21.83");
-        properties.put("port", "6666");
-        RpcClient  rpcClient =  RpcClientFactory.getDefaultInstance("192.168.21.83", 6666);
-
-
+        RpcClient  rpcClient =  RpcClientFactory.getDefaultInstance("192.168.21.90", 1111);
 
         EventReader reader = new SimpleTextLineEventReader(new FileReader(new File("C:\\tmp\\logs\\a.txt")));
         int batchSize = 1000;
